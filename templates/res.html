@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>
+Jobs
+</title>
+</head>
+<body>
+<table border="5px">
+<tr>
+<td>
+Jobid</td><td>job name</td>
+</tr>
+{% for i in jbs %}
+{% for j in i %}
+<tr>
+<td>
+{{ j['jid'] }}
+</td>
+<td>
+{{ j['Job Tiltle'] }}
+</td>
+</tr>
+{% endfor %}
+{% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>
+Apply
+</title>
+</head>
+<body>
+<h1>{{c}}</h1>
+<br><br>
+<table border="1px">
+<tr>
+	<td>Jid</td>
+	<td>JobTitle</td>
+	<td>Job type</td>
+	<td>location</td>
+	<td>skills</td>
+</tr>
+<tr>
+	<td>{{ jbs['jid'] }}</td>
+	<td>{{ jbs['Job Tiltle'] }}</td>
+	<td>{{ jbs['Job Type'] }}</td>
+	<td>{{ jbs['loacation'] }}</td>
+	<td>{{ jbs['Skills Req'] }}</a></td>
+</tr>
+</table><br><br>
+<form action="http://192.168.2.159:5000/{{cid}}-{{jbs['jid']}}/applicant", method="POST">
+Name:<input name="Name" type="text"/><br>
+Email:<input name="Email" type="text"><br>
+<button type="submit">Apply</button>
+</form>
+</body>
+</html>

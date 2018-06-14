@@ -1,0 +1,271 @@
+body {
+	background-color: #e8e5e5;
+}
+.centered-form{
+	margin-top: 60px;
+    margin-bottom: 60px
+
+}
+
+.nav nav-tabs{
+  font-size: 20px;
+}
+.active0{
+	color:#474646; 
+	font-size:15px;
+	background-color:#ffffff;
+}
+.active1{
+background-color: #f3f3f3;
+}
+
+select {
+    border: 1px solid #d6d8db;
+    background-color: #ecedee;
+    
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+    
+
+
+}
+select > option {
+    
+    padding: 5px 0px;
+}
+.customSelect {
+    border: 1px solid #d6d8db;
+    background-color: #ecedee;
+    
+    color: #47515c;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+}
+.customSelect.changed {
+    background-color: #ecedee;
+}   
+.customSelectInner {
+    background:url(../images/select_arrows.png) no-repeat center right;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+@media only screen and (min-width: 601px)
+  .container {
+    width: 85%;
+}
+@media only screen and (min-width: 993px)
+  .container {
+    width: 70%;
+}
+
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #d6d8db;
+    width: 100%;
+}
+.centered-form .panel {
+	background:rgba(255,255,255,0.8);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.20)
+}
+
+
+.btn{
+	background-color: #1b75bb;
+	color: #fff;
+	padding: 7px 14px;
+	border-radius: 30px;
+}
+
+
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+button:hover {
+  opacity: 0.8;
+}
+button {
+  background-color: #1b75bb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+
+}
+
+#nextBtn
+{
+  color: #ffffff;
+}
+
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+.step.finish {
+  background-color: #1b75bb;
+}
+
+      
+     input {
+     	
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+  font-size: 12px;
+  border: 1px solid #d6d8db;
+  border-radius: 5px;
+}
+     .input-sm {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 5px;
+} 
+     .switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  transform:translateY(50%);
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #1b75bb;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+    
+    * {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+
+element {
+}
+[_nghost-c48] .stages-container-wrap[_ngcontent-c48]:hover .edit-overlay[_ngcontent-c48] {
+    opacity: 1;
+}
+[_nghost-c48] .stages-container-wrap[_ngcontent-c48] .edit-overlay[_ngcontent-c48] {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(54, 65, 78, 0.7);
+    z-index: 100;
+
+      border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+.modal-header, h4, .close {
+      background-color: #1b75bb;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #1b75bb;
+    }
+
+
+
+

@@ -1,0 +1,564 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title> Openings Form </title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/custom.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea'});</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="/static/style.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row centered-form">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-sm-offset-0 col-md-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title" align="center" style="font-size: 20px" ><i class="fa fa-user-circle" style="color: #474646; padding: 6px;"></i><b>Enter Opening Details</b></h3>
+						</div>
+						<ul class="nav nav-tabs">
+    <li><a href="#tab1" class="active0" data-toggle="tab"  onclick="tabtrial(0)"><i class="fa fa-edit" style="color:#474646; padding: 6px;"></i><b>Job Details</b></a></li>
+    <li><a href="#tab2" class="active0"  data-toggle="tab" onclick="tabtrial(1)"><i class="fa fa-navicon" style="color: #474646; padding: 6px;"></i><b>Application Details</b></a></li>
+    <li><a href="#tab3" class="active0"  data-toggle="tab" onclick="tabtrial(2)"	><i class="fa fa-sort-amount-asc" style="color:#474646; padding: 6px;"></i><b>Workflow</b></a></li>
+</ul>
+
+						<div class="panel-body">
+							<form role="form" action="http://192.168.2.159:5000/createop/{{ cide }}" method="POST" name="regForm">
+								<div class="tab" id="tab1"><p style="font-size: 15px;" ></p>
+										<div class="row">
+											<div class="col xs-12 col-sm-12 col-md-12">
+												<div class="form-group">
+													<label for="titleinput">Title</label>
+													<input type="text" name="title1" id="title" class="form-control input-sm" placeholder="e.g Designer, Web Developer" oninput="this.className = ''">
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row">
+
+											<div class="col-xs-12 col-sm-12 col-ms-12">
+												<div class="form-group">
+													<label for="roleinput">Primary Role</label>
+													<input list="primaryrole" name="primaryrole" class="form-control input-sm" placeholder="Enter Role" oninput="this.className = ''">
+													<datalist id="primaryrole">
+														<option value="Developer">Software Engineer</option>
+														<option value="Mobile Developer">&nbsp;&nbsp;&nbsp; Mobile Developer</option>
+														<option value="Frontend Developer">&nbsp;&nbsp;&nbsp; Frontend Developer</option>
+														<option value="Backend Developer">&nbsp;&nbsp;&nbsp; Backend Developer</option>
+														<option value="Engineering Manager">&nbsp;&nbsp;&nbsp; Engineering Manager</option>
+														<option value="DevOps">&nbsp;&nbsp;&nbsp; DevOps</option>
+														<option value="Designer">Designer</option>
+														<option value="User Researcher">&nbsp;&nbsp;&nbsp; User Researcher</option>
+														<option value="Creative Director">&nbsp;&nbsp;&nbsp; Creative Director</option>
+														<option value="Operations">Operations</option>
+														<option value="Finance">&nbsp;&nbsp;&nbsp; Finance/Accounting</option>
+														<option value="Human Resources">&nbsp;&nbsp;&nbsp; H.R.</option>
+														<option value="Office Manager">&nbsp;&nbsp;&nbsp; Office Manager</option>
+														<option value="Recruiter">&nbsp;&nbsp;&nbsp; Recruiter</option>
+														<option value="Customer Service">&nbsp;&nbsp;&nbsp; Customer Service</option>
+														<option value="Operations Manager">&nbsp;&nbsp;&nbsp; Operations Manager</option>
+														<option value="sales">Sales</option>
+														<option value="Business Development">&nbsp;&nbsp;&nbsp; Business Development</option>
+														<option value="Manager Business Development">&nbsp;&nbsp;&nbsp; BD Manager</option>
+														<option value="Account Manager">&nbsp;&nbsp;&nbsp; Account Manager</option>
+														<option value="Sales Manager">&nbsp;&nbsp;&nbsp; Sales Manager</option>
+														<option value="Marketing">Marketing</option>           
+														<option value="Growth Hacking">&nbsp;&nbsp;&nbsp; Growth Hacker</option>
+														<option value="Marketing Manager">&nbsp;&nbsp;&nbsp; Marketing Manager</option>
+														<option value="Content Creator">&nbsp;&nbsp;&nbsp; Content Creator</option>
+														<option disabled="disabled" value="Management">Management</option>
+														<option value="CEO">&nbsp;&nbsp;&nbsp; CEO</option>
+														<option value="CFO">&nbsp;&nbsp;&nbsp; CFO</option>
+														<option value="CMO">&nbsp;&nbsp;&nbsp; CMO</option>
+														<option value="COO">&nbsp;&nbsp;&nbsp; COO</option>
+														<option value="cto">&nbsp;&nbsp;&nbsp; CTO</option>
+														<option disabled="disabled" value="Engineer">Other Engineering</option>
+														<option value="Hardware Engineer">&nbsp;&nbsp;&nbsp; Hardware Engineer</option>
+														<option value="Mechanical Engineer">&nbsp;&nbsp;&nbsp; Mechanical Engineer</option>
+														<option value="Systems Engineer">&nbsp;&nbsp;&nbsp; Systems Engineer</option>
+														<option disabled="disabled" value="Other">Other</option>
+														<option value="Attorney">&nbsp;&nbsp;&nbsp; Attorney</option>
+														<option value="Business Analyst">&nbsp;&nbsp;&nbsp; Business Analyst</option>
+														<option value="Data Scientist">&nbsp;&nbsp;&nbsp; Data Scientist</option>
+														<option value="Product Manager">&nbsp;&nbsp;&nbsp; Product Manager</option>
+														<option value="Project Manager">&nbsp;&nbsp;&nbsp; Project Manager</option></select>
+													</datalist>
+
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 col-sm-6 col-ms-6">
+												<div class="form-group">
+													<label for="roleinput">Job Type</label>
+													<br>
+
+													<select name="type">
+														<option value="full-time">Full-Time</option>
+														<option value="part-time" selected>Part-Time</option>
+														<option value="intern">Internship</option>
+														<option value="contractor">Contract</option>
+														<option value="volunteer">Volunteer</option>
+													</select>
+												</div>
+											</div>
+
+
+											<div class="col-xs-6 col-sm-6 col-ms-6">
+												<div class="form-group">
+													<label for="roleinput">Skills</label>
+													<input  id="skills" name="skills" class="form-control input-sm" placeholder="Required Skills" oninput="this.className = ''">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="col xs-6 col-sm-6 col-ms-6">
+												<div class="form-group">
+													<label for="roleinput">Location</label>
+													<input type="text" id="autocomplete" name="location" class="form-control input-sm" placeholder="Work location" oninput="this.className = ''">
+												</div>
+											</div>
+											<div class="col xs-6 col-sm-6 col-ms-6">
+												<div class="form-group">
+													<label for="roleinput">Work Experience</label>
+													<input type="number" name="experience" id="experience" class="form-control input-sm" placeholder="No. Of years" oninput="this.className = ''" oninvalid="setCustomValidity('please Enter Numbers' Required)">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col xs-6 col-sm-6 col-ms-6-">
+												<div class="form-group">
+													<label for="roleinput">Salary Range</label>
+													<input type="number" name="salary" id="salary" class="form-control input-sm" placeholder="e.g 1000 - 2000" oninput="this.className = '' "oninvalid="setCustomValidity('please Enter Numbers' Required)">
+												</div>
+											</div>
+											<div class="col xs-6 col-sm-6 col-ms-6-">
+												<div class="form-group"> 
+													<label for="roleinput">Currency</label>
+													<br>
+													<select name="curr"> 
+														<option value="INR" selected="selected">&#x20B9; Indian Rupee</option>
+														<option value="USD">&#36; United States Dollar</option>
+														<option value="EUR">&euro; Euro</option>
+														<option value="GBP">&pound; British Pound</option>
+														<option value="CAD">&#36; Canadian Dollar</option>
+														<option value="JPY">&#165; Japanese Yen</option>
+														<option value="CNY">&#165; Chinese Renminbi Yuan</option>
+														<option value="SGD">&#36; Singapore Dollar</option></select>
+													</div>
+												</div>
+											</div>
+
+
+
+											<div class="row">
+												<div class="col xs-12 col-sm-12 col-md-12">
+													<div class="form-group">
+														<label for="Description">Job Description</label>
+														<br>
+														  <textarea name="jdec" id="comments" style="width:100%; height:100px;"></textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+                                      <script>
+                                      	 var editor;
+  function reLoadEditor() {
+      editor.removeInstance('comments'); 
+      editor = new nicEditor({fullPanel : false}).panelInstance('comments');
+  }();
+
+  $(window).resize( function() {
+     reLoadEditor();
+  } );
+                                      </script>
+
+
+
+										<!--new tab-->
+
+						
+										<div class="tab"><p style="font-size: 20px;"></p>
+										<div class="row" >
+
+											<div class="col xs-12 col-sm-12 col-md-12">
+												<div class="form-group" id="Questions"><p><b>Add Desired Questions</b></p>
+												
+									
+
+
+                                                    </div>
+												</div>
+											</div>
+										
+
+                                          <div class="row">
+                                          
+                                            <div class="col xs-4 col-sm-6 col-ms-6-6">
+												<div class="form-group">
+                                                  <p><b>Switch On or Off elements</b></p>
+												 <div class="columns">
+												 <p ><i class="fa fa-phone"  name="pht" aria-hidden="true" style="color:#474646; padding: 6px;"><input type="checkbox" /></i>Ask Applicant for phone number.</p>
+												 <br>
+												 <p name="rest"><i class="fa fa-file" aria-hidden="true" style="color:#474646; padding: 6px;"></i>Ask Applicant for resume.</p>
+												 
+                                          	     </div>
+                                                 </div>
+                                                 </div>
+                                                 <div class="col xs-8 col-sm-6 col-ms-6">
+												<div class="form-group">
+                                                 <div class="columns">
+                                                 <br>
+                                                 <p>
+                                                 <label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	
+                                            <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	
+
+                                                 </div>
+                                                 </div>
+                                                 </div>
+                                                 </div>
+										</div>   <!--tab ends here -->
+
+										
+
+										<div class="tab">
+											
+                                          <section class="design-process-section" id="process-tab">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12"> 
+      <h5 align="center"><b>Manage E-mail alerts by navigating through the workflow.</b></h5>
+        <!-- design process steps--> 
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+          <li role="presentation" class="active" ><a href="#applied" aria-controls="applied" role="tab" data-toggle="tab"><i class="fa fa-edit" aria-hidden="true"></i>
+            <p>Applied</p>
+            </a></li>
+          <li role="presentation" ><a href="#invited" aria-controls="invited" role="tab" data-toggle="tab"><i class="fa fa-send-o" aria-hidden="true"></i>
+            <p>Invited</p>
+            </a></li>
+          <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab"><i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <p>Completed</p>
+            </a></li>
+          <li role="presentation"><a href="#shortlisted" aria-controls="shortlisted" role="tab" data-toggle="tab"><i class="fa fa-clipboard" aria-hidden="true"></i>
+            <p>Shortlisted</p>
+            </a></li>
+          <li role="presentation" ><a href="#rejected" aria-controls="rejected" role="tab" data-toggle="tab"><i class="fa fa-frown-o" aria-hidden="true"></i>
+            <p>Rejected</p>
+            </a></li>
+       
+
+        </ul>
+        <!-- end design process steps--> 
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="applied">
+            <div class="design-process-content">
+              <h3 class="semi-bold"><b>Applied</b></h3>
+             <p>Send E-mail alerts to applicants who have successfully applied.</p>
+             <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round "></span>
+                                          	</label></p>
+                                          	<br>
+                                          	<p><b>E-mail Subject:</b></p>
+                                          	<input type="text" name="st1sub" id="title" placeholder="e.g Application submitted successfully for [job-title]" oninput="this.className = ''">
+                                          	<br>
+                                          	<p><b>E-mail Content:</b></p>
+                                          
+             <textarea name="st1mail"></textarea>
+             </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="invited">
+            <div class="design-process-content">
+              <h3 class="semi-bold"><b>Assessments</b></h3>
+              <p>Send E-mail Invites to desired applicants.</p>
+              <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	<br>
+                                          	<p><b>E-mail Subject:</b></p>
+                                          	<input type="text" name="st2sub" id="title" placeholder="e.g Applicant successfully invited for [job-title]" oninput="this.className = ''">
+                                          	<br>
+                                          	<p><b>E-mail Content:</b></p>
+                                          
+             <textarea name="st2mail"></textarea>
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="completed">
+            <div class="design-process-content">
+              <h3 class="semi-bold"><b>Completed Assessment</b></h3>
+              <p>Send E-mail alerts to applicants who have successfully completed the assessment.</p>
+              <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	<br>
+                                          	<p><b>E-mail Subject:</b></p>
+                                          	<input type="text" name="st3sub" id="title" placeholder="e.g Assessment successfully completed for [job-title]" oninput="this.className = ''">
+                                          	<br>
+                                          	<p><b>E-mail Content:</b></p>
+                                          
+             <textarea name="st3mail"></textarea>
+               </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shortlisted">
+            <div class="design-process-content">
+              <h3 class="semi-bold"><b>Shortlisted</b></h3>
+              <p>Send E-mail alerts to applicants who have been shortlisted.</p> 
+              <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	<br>
+                                          	<p><b>E-mail Subject:</b></p>
+                                          	<input type="text" name="st4sub" id="title" placeholder="e.g Applicant shortlisted for [job-title]" oninput="this.className = ''">
+                                          	<br>
+                                          	<p><b>E-mail Content:</b></p>
+                                          
+             <textarea name="st4mail"></textarea>             
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="rejected">
+            <div class="design-process-content">
+              <h3 class="semi-bold"><b>Rejected</b></h3>
+              <p>Send E-mail alerts to applicants who have been rejected. </p>
+              <p><label class="switch"> 
+                                          		<input type="checkbox" checked>
+                                          		<span class="slider round"></span>
+                                          	</label></p>
+                                          	
+                                          	<p><b>E-mail Subject:</b></p>
+                                          	<input type="text" name="st5sub" id="title" placeholder="e.g Applicant rejected for [job-title]"oninput="this.className = ''">
+                                          	<br>
+                                          	<p><b>E-mail Content:</b></p>                             
+             <textarea name="st5mail"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+    <script src="/static/index.js"></script>
+										</div>
+									
+
+									<div style="overflow:auto;">
+										<div style="float:right;">
+											<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+											<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+										</div>
+									</div>
+									<!-- Circles which indicates the steps of the form: -->
+									<div style="text-align:center;margin-top:40px;">
+										<span class="step"></span>
+										<span class="step"></span>
+										<span class="step"></span>
+										<span class="step"></span>
+									</div>
+								</form>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								
+								<script>
+	var currentTab = 0; // Current tab is set to be the first tab (0)
+	showTab(currentTab); // Display the crurrent tab
+
+	function showTab(n) {
+	  // This function will display the specified tab of the form...
+	  var x = document.getElementsByClassName("tab");
+	  x[n].style.display = "block";
+	 //... and fix the Previous/Next buttons:
+
+	  var z = document.getElementsByClassName("active0");
+		  z[currentTab].className="active1";
+	  
+	  if (n == 0) {
+	  	document.getElementById("prevBtn").style.display = "none";
+	  } else {
+	  	document.getElementById("prevBtn").style.display = "inline";
+		$('html, body').animate({
+		scrollTop: 0
+		}, 'fast');
+	  }
+	  if (n == (x.length - 1)) {
+	  	document.getElementById("nextBtn").innerHTML = "Submit";
+	  } else {
+	  	document.getElementById("nextBtn").innerHTML = "Next";
+	  }
+	  //... and run a function that will display the correct step indicator:
+	  fixStepIndicator(n)
+	  
+	}
+	
+
+	function tabtrial(n){
+		  var x = document.getElementsByClassName("tab");
+		  var z = document.getElementsByClassName("active1");
+		  z[0].className="active0";
+		  
+	  // Exit the function if any field in the current tab is invalid:
+	  if (!validateForm()) return false;
+	   x[currentTab].style.display = "none";
+	   
+
+	   currentTab=n;
+	   
+	   if (currentTab >= x.length) {
+	    // ... the form gets submitted:
+	    document.getElementById("nextBtn").type = "Submit";
+	    document.getElementById("regForm").submit();
+	    return false;
+	  
+
+	}
+	  // Otherwise, display the correct tab:
+	  showTab(currentTab);
+	}
+
+
+
+	function nextPrev(n) {
+	  // This function will figure out which tab to display
+	  var z = document.getElementsByClassName("active1");
+	  z[0].className="active0";
+	  var x = document.getElementsByClassName("tab");
+	  // Exit the function if any field in the current tab is invalid:
+	  if (n == 1 && !validateForm()) return false;
+	  x[currentTab].style.display = "none";
+	  // Increase or decrease the current tab by 1:
+	  currentTab = currentTab + n;
+	  // if you have reached the end of the form...
+	  if (currentTab >= x.length) {
+	    // ... the form gets submitted:
+	    document.getElementById("nextBtn").type = "submit";
+	    document.getElementById("regForm").submit();
+	    return false;
+		}
+		else{
+			document.getElementById("nextBtn").type = "button";
+		}
+	  showTab(currentTab);
+	}
+
+	
+	function validateForm() {
+	  // This function deals with validation of the form fields
+	  var x, y, i, valid = true;
+	  x = document.getElementsByClassName("tab");
+	  y = x[currentTab].getElementsByTagName("input");
+	  // A loop that checks every input field in the current tab:
+	  for (i = 0; i < y.length; i++) {
+	    // If a field is empty...
+	    if (y[i].value == "") {
+	      // add an "invalid" class to the field:
+	      y[i].className += " invalid";
+	      // and set the current valid status to false
+	      valid = false;
+	  }
+	}
+	  // If the valid status is true, mark the step as finished and valid:
+	  if (valid) {
+	  	document.getElementsByClassName("step")[currentTab].className += " finish";
+	  }
+	  return valid; // return the valid status
+	}
+
+	function fixStepIndicator(n) {
+	
+	  var i, x = document.getElementsByClassName("step");
+	  for (i = 0; i < x.length; i++) {
+	  	x[i].className = x[i].className.replace(" active", "");
+	  }
+	  //... and adds the "active" class on the current step:
+	  x[n].className += " active";
+	}
+</script>
+
+
+<script>
+	      // This example displays an address form, using the autocomplete feature
+	      // of the Google Places API to help users fill in the information.
+
+	      // This example requires the Places library. Include the libraries=places
+	      // parameter when you first load the API. For example:
+	      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+
+	      function initAutocomplete() {
+	        // Create the autocomplete object, restricting the search to geographical
+	        // location types.
+	        autocomplete = new google.maps.places.Autocomplete(
+	        	/** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+	        	{types: ['geocode']});
+
+	        // When the user selects an address from the dropdown, populate the address
+	        // fields in the form.
+	        autocomplete.addListener('place_changed', fillInAddress);
+	    }
+
+
+
+	      // Bias the autocomplete object to the user's geographical location,
+	      // as supplied by the browser's 'navigator.geolocation' object.
+	      function geolocate() {
+	      	if (navigator.geolocation) {
+	      		navigator.geolocation.getCurrentPosition(function(position) {
+	      			var geolocation = {
+	      				lat: position.coords.latitude,
+	      				lng: position.coords.longitude
+	      			};
+	      			var circle = new google.maps.Circle({
+	      				center: geolocation,
+	      				radius: position.coords.accuracy
+	      			});
+	      			autocomplete.setBounds(circle.getBounds());
+	      		});
+	      	}
+	      }
+	  </script>
+	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPvtJnUultwv9hJ5_VDJVkaCsl18WAYYg&libraries=places&callback=initAutocomplete"
+	  async defer></script>
+
+	</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.i\min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js"></script>
+
+
+
+
+
+</body>
+</html>
+

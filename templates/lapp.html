@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>
+Applicants
+</title>
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
+<script src="/static/ang.js"></script>
+
+<body ng-app="app" ng-controller="httpcontroller" ng-init="ini()">
+{a link a}<br>
+{a list a}<br>
+{a checked a}<br>
+stages: {a stat a}<br>
+data:{a lis a}
+{a sel a}
+<form onsubmit="return false" >
+<table border="100%" ng-model="stat={{stage}}" >
+
+<tr>
+<td> </td>	<td>AID</td> <td>Applicant name</td> <td>email</td> <td>stage</td> <td>Select-Stage</td> 
+</tr>
+
+<tr ng-repeat="i in lis track by $index">
+<td ng-hide="butt!='update-selected'"><input type="checkbox" name="check" ng-model="checked[$index]"/></td>
+<td >
+{a i['aid'] a}
+</td>
+<td>
+{a i['name'] a}
+</td>
+<td>
+{a i['email'] a}
+</td>
+
+<td>{a stat[i['status']] a}<br>
+</td>
+ 
+	<td>
+		<select name="stage"  ng-model="lis[$index].stage" convert-to-number="" ng-click="list[$index]=lis[$index].stage" >
+			{% for st in stage %}
+				<option value="{{st}}">
+					{{ stage[st] }}
+				</option>
+			{% endfor %}
+		</select>
+	</td>
+</tr>
+</table>
+
+		<button  ng-click="SendData(lis,list)" ng-model="but" type="submit" ng-show="butt!=but">{a but a}</button>
+		<select name="stage2"  ng-model="sel" convert-to-number="">
+			{% for st in stage %}
+				<option value="{{st}}">
+					{{ stage[st] }}
+				</option>
+			{% endfor %}
+		</select>
+		<button ng-click="checkup()" ng-show="butt=='update'" type="submit">{a butt a}</button>
+</form>
+</body>
+<script>
+	var app = angular.module("app", []);
+	angular.module('app').config(['$interpolateProvider', function($interpolateProvider) {
+		$interpolateProvider.startSymbol('{a');
+		$interpolateProvider.endSymbol('a}');
+	}]);
+	app.controller("httpcontroller", ['$scope', '$http', '$window',function ($scope, $http) {
+		$scope.ini = function () {
+			$scope.list=[]
+			$scope.checked=[]
+			$scope.link='update/{{cid}}-{{jid}}'
+			$scope.GetData();
+			$scope.but='update'
+			$scope.butt='update-selected'
+		};
+		$scope.checkup = function() {
+			var i	
+			for(i=0;i<$scope.checked.length;i++){
+				if($scope.checked[i]){
+					$scope.list[i]=$scope.sel
+				}
+			}
+			$scope.butt='updating'
+			$scope.SendData($scope.lis,$scope.list)
+		};
+		$scope.GetData = function(){
+				$scope.but='Loading'
+	        	$http.get($scope.link)
+    				.then(function(response) {
+        				$scope.lis = response['data'];
+        				$scope.but='update'
+        				$scope.butt='update-selected'
+    		});
+	    };
+		$scope.SendData = function (lis,list) {
+			var k='/updateget'
+			$scope.but='Updating'
+			$http.post(k, {
+				"stage" :lis,
+				"ind" :list
+			}).then(
+				function (response) {
+					$scope.but='retrieving updated data'
+					$scope.butt='retrieving updated data'
+					$scope.GetData()
+					return
+				},
+				function(response){
+					alert("fail");
+					return
+				});};
+	}]);
+</script>
+</html>

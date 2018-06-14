@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>
+Company
+</title>
+</head>
+<body>
+<table border="5px">
+<tr>
+<td>
+CID</td><td>Company name</td><td>Email</td><td>Total openings</td>
+</tr>
+<tr>
+<td>{{ k['cid'] }}</td>
+{% for i in ci[0] %}
+<td>
+{{ i }}
+</td>
+{% endfor %}
+</tr>
+</table>
+<br><br>
+<table border="1px">
+<tr>
+	<td>Jid</td>
+	<td>JobTitle</td>
+	<td>Job type</td>
+	<td>location</td>
+	<td>Link</td>
+	<td>Applications</td>
+</tr>
+{% for i in k['jobs'] %}
+<tr>
+	<td>{{ i['jid'] }}</td>
+	<td>{{ i['Job Tiltle'] }}</td>
+	<td>{{ i['Job Type'] }}</td>
+	<td>{{ i['loacation'] }}</td>
+	<td><a href="{{i['link']}}">{{ i['link'] }}</a></td>
+	<td><a href="http://192.168.2.159:5000/applicants/{{k['cid']}}-{{i['jid']}}">Click here!</a></td>
+</tr>
+{% endfor %}
+
+</table>
+<a href="http://192.168.2.159:5000/CreateOpening/{{k['cid']}}"><button>Create Opening</button></a>
+</body>
+</html>
