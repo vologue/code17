@@ -16,9 +16,24 @@ app.config['MAIL_USE_SSL'] = True
 mongo = PyMongo(app)
 mail = Mail(app)
 
-@app.route('/')
-def works():
-	return 'WELCOME TO XOBIN INTERACT!'
+@app.route('/<id>')
+def works(id):
+	ids=id.split('-')
+	lis=[]
+	stages=[]
+	op=mongo.db.list
+	for m in op.find():
+		if(ids[0]==m['cid']):
+			jbs=m['opns']
+			for op in jbs:
+				if(op['jid']==ids[1]):
+					stages=op['stages']
+	for staj in range(1,9):
+		if((stages['%d'%(staj)])=="Rename Stage"):
+			cout=staj
+			break
+
+	return render_template('stages.html',stage=stages,cid=ids[0],jid=ids[1],count=cout)
 
 @app.route('/applicants/update/<id>')
 def getapp(id):
@@ -109,7 +124,7 @@ def comp(email):
 		if(i['user']==email):
 			l=i
 			break
-	return render_template("Company.html", ci=c,k=l)
+	return render_template("Dashboard.html", ci=c,k=l)
 	
 @app.route('/login')
 def login():
@@ -193,6 +208,8 @@ def apply(id):
 	cur = con.cursor()
 	que="select Name from Company where CID like '%s'" %(ids[0])
 	cur.execute(que)
+	j=cur.fetchall()
+	l=[]
 	open=mongo.db.Company
 	for i in open.find():
 		if(i['cid']==ids[0]):
@@ -200,7 +217,6 @@ def apply(id):
 				if(k['jid']==ids[1]):
 					l=k
 					break
-	j=cur.fetchall()
 	lis=[]
 	#return"apply for job %s <br> offered by company %s" %(ids[1],j[0][0])
 	return render_template("apply.html",jbs=l,c=j[0][0],cid=ids[0])
@@ -227,6 +243,24 @@ def getdat(cid):
 	 loca = request.form['location']
 	 exp = request.form['experience']
 	 sal= request.form['salary']
+	 try:
+	 	ph= request.form['ph']
+	 	res= request.form['res']
+	 except:
+	 	if(ph=="on"):
+	 		res="off"
+	 	elif(res=="on"):
+	 		ph=="off"
+	 	else:
+	 		ph="off"
+	 		res="off"
+	 try:
+	 	cqtype=request.form['cqtype']
+	 	cques=request.form['cques']
+	 	print(cques)
+	 except:
+	 	cques=""
+	 	cqtype=""
 	 currency= request.form['curr']
 	 jdec= request.form['jdec']
 	 sub1= request.form['st1sub']
@@ -239,6 +273,22 @@ def getdat(cid):
 	 mail4=request.form['st4mail']
 	 sub5= request.form['st5sub']
 	 mail5=request.form['st5mail']
+	 st1n=request.form['st1n']
+	 st1t=request.form['st1t']
+	 st2n=request.form['st2n']
+	 st2t=request.form['st2t']
+	 st3n=request.form['st3n']
+	 st3t=request.form['st3t']
+	 st4n=request.form['st4n']
+	 st4t=request.form['st4t']
+	 st5n=request.form['st5n']
+	 st5t=request.form['st5t']
+	 st6n=request.form['st6n']
+	 st6t=request.form['st6t']
+	 st7n=request.form['st7n']
+	 st7t=request.form['st7t']
+	 st8n=request.form['st8n']
+	 st8t=request.form['st8t']
 	 link="http://192.168.2.159:5000/apply/%s-%d%d%d" %(cid,l,b,a)
 	 open=mongo.db.Company
 	 open.update({'cid':cid},{"$push":{'jobs':{"jid": "%d%d%d" %(l,b,a),
@@ -251,7 +301,11 @@ def getdat(cid):
 	 			  "Salary range":sal,
 	 			  "Currency" : currency,
 	 			  "Job Decription":jdec,
+	 			  "reqphone":ph,
+	 			  "reqres":res,
 	 			  "link":link,
+	 			  "cques":cques,
+	 			  "cqtype":cqtype,
 	 			  "sub1":sub1,
 	 			  "mail1":mail1,
 	 			  "sub2":sub2,
@@ -267,10 +321,14 @@ def getdat(cid):
 	 con.commit()
 	 op=mongo.db.list
 	 op.update({'cid':cid},{"$push":{'opns':{"jid":"%d%d%d" %(l,b,a),
-	 			"stages":{'1':"Applied",
-	 					  '2':"Assessment-Compeleted",
-	 					  '3':"Shortlisted",
-	 					  '4':"Rejected"}
+	 			"stages":{'1':st1n,
+	 					  '2':st2n,
+	 					  '3':st3n,
+	 					  '4':st4n,
+	 					  '5':st5n,
+	 					  '6':st6n,
+	 					  '7':st7n,
+	 					  '8':st8n	}
 	 			}}},upsert=False,multi=False)
 	 return redirect("/company/%s" %(email))
 

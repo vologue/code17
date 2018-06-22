@@ -1,0 +1,20 @@
+.dash-img{
+  width: 25%;
+}
+
+.point-holder{
+  position: relative;
+  height: auto;
+}
+
+.point-holder p{
+  z-index: 5;
+}
+
+.point-img{
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+  left: 37%;
+  bottom: -30px;
+}

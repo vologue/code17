@@ -58,7 +58,7 @@
     float: none;
     
 }
-.nav-tabs.process-model > li.active > a, .nav-tabs.process-model > li.active > a:hover, .nav-tabs.process-model > li.active > a:focus, .process-model li a:hover, .process-model li a:focus {
+.nav-tabs.process-model > li.active > a, .nav-tabs.process-model  > a:hover, .nav-tabs.process-model > li.active > a:focus, .process-model li a:hover, .process-model li a:focus {
     border: none;
     background: transparent;
 
@@ -148,4 +148,37 @@
     .process-model.more-icon-preocess {
         text-align: center;
     }
+}
+  
+
+
+  #sortable li {
+    color: #474646;
+  
+
+padding-bottom: 15px;
+padding-top: 3px;
+padding-right: 3px;
+ 
+  margin-bottom: 10px;
+  background:#edeaea;
+  width: 30%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  vertical-align: middle;
+  font-weight: 700;
+  list-style-type: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+}
+#sortable li:hover
+{
+    color: #333333;
+    background:#d8d6d6;
+   
+    border-color:2px solid #474646;
+
+
+
 }

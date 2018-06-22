@@ -7,52 +7,65 @@ body {
 
 }
 
-.wrong{
-	background-color:#fe5959;
-}
-}
 .nav nav-tabs{
   font-size: 20px;
 }
-.active0{
-	color:#474646; 
-	font-size:15px;
-	background-color:#ffffff;
-}
-.active1{
-background-color: #f3f3f3;
-}
 
-select {
-    border: 1px solid #d6d8db;
-    background-color: #ecedee;
-    
-    border-radius: 5px;
-    width: auto;
-    cursor: pointer;
-    
-
-
+.custom-select {
+  position: relative;
+  
 }
-select > option {
-    
-    padding: 5px 0px;
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
 }
-.customSelect {
-    border: 1px solid #d6d8db;
-    background-color: #ecedee;
-    
-    color: #47515c;
-    padding: 5px 5px 5px 5px;
-    margin-bottom: 10px;
+.select-selected {
+  background-color: #f5f5f5;
 }
-.customSelect.changed {
-    background-color: #ecedee;
-}   
-.customSelectInner {
-    background:url(../images/select_arrows.png) no-repeat center right;
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 11px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #000 transparent transparent transparent;
 }
-
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #000 transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #000000;
+  padding: 4px 8px;
+ border: 1px solid transparent;
+  border-color: rgba(0.2, 0.2, 0.2, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #f5f5f5;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+select{
+  font-family: FontAwesome;
+}
 .container {
   margin: 0 auto;
   max-width: 100%;
@@ -80,36 +93,16 @@ textarea {
 	background:rgba(255,255,255,0.8);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.20)
 }
-
-
-.btn{
-	background-color: #1b75bb;
-	color: #fff;
-	padding: 7px 14px;
-	border-radius: 30px;
+.btn-info
+{
+  color: #2d2323;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
-
-
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.step.active {
-  opacity: 1;
-}
-button:hover {
+.btn:hover {
   opacity: 0.8;
 }
-button {
+.btn-primary {
   background-color: #1b75bb;
   color: #ffffff;
   border: none;
@@ -118,10 +111,19 @@ button {
   font-family: Raleway;
   cursor: pointer;
   border-radius: 3px;
-}
 
+}
+.btn{
+  background-color: #1b75bb;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 30px;
+}
 #prevBtn {
   background-color: #bbbbbb;
+  color: #000000;
+  border-color: #bbbbbb;
+
 
 }
 
@@ -129,21 +131,6 @@ button {
 {
   color: #ffffff;
 }
-
-
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-.step.finish {
-  background-color: #1b75bb;
-}
-
       
      input {
      	
@@ -260,7 +247,7 @@ element {
 
 
 
-.modal-header, h4, .close {
+.modal-header, .close {
       background-color: #1b75bb;
       color:white !important;
       text-align: center;
