@@ -1,0 +1,209 @@
+@import url(https://fonts.googleapis.com/css?family=Paprika);
+@import url(https://fonts.googleapis.com/css?family=Karla);
+*{
+	box-sizing: border-box;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background:#f1f1ff;
+    overflow-x: hidden !important;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Karla', sans-serif;
+}
+form{
+	background: #ebeff2;
+	border-radius: 0.5em;
+	box-shadow: 0 0 1em 0 rgba(51,51,51,0.25);
+	padding: 2em;
+	margin:0 auto;
+	width: 60%;
+	overflow: hidden;
+	margin-top: 40px;
+
+}
+
+
+
+form button.submit{
+	background: #012e93;
+	color: #ffffff;
+	line-height: 1em;
+	padding: 15px;
+	border-radius: 5px;
+	border:0px;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+}
+form button:hover,
+form button:focus,
+form button:active,
+form button.loading{
+	background: #333;
+	color: #fff;
+	outline: none;
+}
+form button.success{
+	background: #27ae60;
+	border-color: #27ae60; 
+	color: #fff;
+}
+@-webkit-keyframes spin{
+	from{ transform: rotate(0deg); }
+	to{ transform: rotate(360deg); }
+}
+@keyframes spin{
+	from{ transform: rotate(0deg); }
+	to{ transform: rotate(360deg); }
+}
+form button span.loading-spinner{
+	-webkit-animation: spin 0.5s linear infinite;
+	animation: spin 0.5s linear infinite;
+	border: 2px solid #fff;
+	border-top-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+}
+
+form label{
+	border-bottom: 1px solid #333;
+	display: block;
+	font-size: 1.25em;
+	margin-bottom: 0.5em;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+form label.col-one-half{
+	float: left;
+	width: 50%;
+}
+form label.col-one-half{
+	border-left: 1px solid #333;
+	padding-left: 0.25em;
+
+}
+form label input{
+	background: none;
+	border: none;
+	line-height: 1em;
+	font-size: 15px;
+	
+	padding: 0.125em 0.25em;
+	width: 100%;
+
+}
+form label input:focus{
+	outline: none;
+}
+form label input:-webkit-autofill{
+	background-color: transparent !important;
+}
+form label .label-text{
+	display: block;
+	font-size: 0.55em;
+	padding-left: 0.5em;
+	text-transform: uppercase;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+	color: #333333;
+}
+form label.checkbox{
+	border-bottom: 0;
+	text-align: center;
+}
+form label.checkbox input{
+	display: none;
+}
+form label.checkbox span{
+	font-size: 0.5em;
+}
+form label.checkbox span:before{
+	content: '\e157';
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-size: 1em;
+	padding-right: 0.25em;
+	position: relative;
+		top: 1px;
+}
+form label.checkbox input:checked + span:before{content: '\e067';}
+form label.invalid{border-color: #c0392b !important;}
+form label.invalid span.label-text{color: #c0392b;}
+{
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0.75em;
+	line-height: 1em;
+	position: absolute;
+		top: 50%;
+		right: 0.5em;
+	text-align: center;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+h1{
+	
+	margin: 0 0 0.5em 0;
+	text-align: center;
+	font-family: 'Paprika', cursive;
+}
+h1 img{
+	height: auto;
+	margin: 0 auto;
+	max-width: 190px;
+	width: 100%;
+}
+html{
+	font-size: 18px;
+	height: 200%;
+}
+
+.text-center{
+	text-align: center;
+}
+select
+{
+	
+	font-size: 15px;
+	padding: 5px;
+	width: 20%;
+	border-radius: 3px;
+	border:0px;
+	
+	
+
+	
+
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
+
+}
+
+.btn-primary
+{
+	font-size: 15px;
+
+	font-family: 'Karla';
+	border-radius: 3px;
+	border:1px solid #012e93 ;
+	color: #ffffff;
+	background: #012e93;
+
+}
+.btn-primary:hover{
+	background: #333;
+}

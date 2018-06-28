@@ -1,0 +1,1286 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title> Openings Form </title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/custom2.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea'});</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.i\min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js"></script>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="/static/jquery-ui.css"> 
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    
+
+
+
+<link rel='stylesheet prefetch' href='https://harvesthq.github.io/chosen/chosen.css'>
+    
+
+  </head>
+  <body ng-app="app" ng-controller="httpcontroller">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+  
+
+    <div class="container">
+  <h3>
+      <a href="#">
+        <img src="/static/ilogo.svg"  style="width:350px;height:50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;">
+      </a>
+    </h3>
+      <div class="row centered-form">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-sm-offset-0 col-md-offset-2">
+        
+          <div class="panel panel-default"  style="background-color: #f5f5f5">
+
+
+            <div class="panel-heading">
+              <h3 class="panel-title" align="center" style="font-size: 20px" ><i class="fa fa-user-circle" style="color: #474646; padding: 6px;"></i><b>Enter Opening Details</b></h3>
+            </div>
+
+
+
+          <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab1" onclick="validate('tab1l')" id="tab1l" data-toggle="tab" style="color:#474646; font-size:15px;"><i class="fas fa-pen-square" style="color:#474646; padding: 6px;"></i><b>Job Details</b></a></li>
+              <li><a href="#tab2" id="tab2l" onclick="validate('tab2l')" data-toggle="" style="color:#474646; font-size:15px;"><i class="fas fa-file-alt" style="color: #474646; padding: 6px;"></i><b>Application Details</b></a></li>
+              <li><a href="#tab3" data-toggle=" " id="tab3l" onclick="validate('tab3l')" style="color:#474646; font-size:15px;"><i class="fa fa-sort-amount-asc" style="color:#474646; padding: 6px;"></i><b>Workflow</b></a></li>
+              <li><a href="#tab4" data-toggle="" id="tab4l" onclick="validate('tab4l')"style="color:#474646; font-size:15px;"><i class="fas fa-users" style="color:#474646; padding: 6px;"></i><b>Communication</b></a></li>
+            </ul>
+            <div class="panel-body">
+              <form action="/createop/{{cide}}" method="POST" role="form">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab1">
+                    <div class="row">
+                      <div class="col xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <label for="titleinput">Title</label>
+                          <input type="text" name="title1" id="title" class="form-control input-sm" placeholder="e.g Designer, Web Developer" required oninput="this.className = ''">
+                        </div> 
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+
+                      <div class="col-xs-12 col-sm-12 col-ms-12">
+                        <div class="form-group">
+                          <label for="roleinput">Primary Role</label>
+                          <select class="form-control selectpicker" name="primaryrole" id="select-role" data-live-search="true">
+                            <option value="Developer">Software Engineer</option>
+                            <option value="Mobile Developer">&nbsp;&nbsp;&nbsp; Mobile Developer</option>
+                            <option value="Frontend Developer">&nbsp;&nbsp;&nbsp; Frontend Developer</option>
+                            <option value="Backend Developer">&nbsp;&nbsp;&nbsp; Backend Developer</option>
+                            <option value="Engineering Manager">&nbsp;&nbsp;&nbsp; Engineering Manager</option>
+                            <option value="DevOps">&nbsp;&nbsp;&nbsp; DevOps</option>
+                            <option value="Designer">Designer</option>
+                            <option value="User Researcher">&nbsp;&nbsp;&nbsp; User Researcher</option>
+                            <option value="Creative Director">&nbsp;&nbsp;&nbsp; Creative Director</option>
+                            <option value="Operations">Operations</option>
+                            <option value="Finance">&nbsp;&nbsp;&nbsp; Finance/Accounting</option>
+                            <option value="Human Resources">&nbsp;&nbsp;&nbsp; H.R.</option>
+                            <option value="Office Manager">&nbsp;&nbsp;&nbsp; Office Manager</option>
+                            <option value="Recruiter">&nbsp;&nbsp;&nbsp; Recruiter</option>
+                            <option value="Customer Service">&nbsp;&nbsp;&nbsp; Customer Service</option>
+                            <option value="Operations Manager">&nbsp;&nbsp;&nbsp; Operations Manager</option>
+                            <option value="sales">Sales</option>
+                            <option value="Business Development">&nbsp;&nbsp;&nbsp; Business Development</option>
+                            <option value="Manager Business Development">&nbsp;&nbsp;&nbsp; BD Manager</option>
+                            <option value="Account Manager">&nbsp;&nbsp;&nbsp; Account Manager</option>
+                            <option value="Sales Manager">&nbsp;&nbsp;&nbsp; Sales Manager</option>
+                            <option value="Marketing">Marketing</option>           
+                            <option value="Growth Hacking">&nbsp;&nbsp;&nbsp; Growth Hacker</option>
+                            <option value="Marketing Manager">&nbsp;&nbsp;&nbsp; Marketing Manager</option>
+                            <option value="Content Creator">&nbsp;&nbsp;&nbsp; Content Creator</option>
+                            <option disabled="disabled" value="Management">Management</option>
+                            <option value="CEO">&nbsp;&nbsp;&nbsp; CEO</option>
+                            <option value="CFO">&nbsp;&nbsp;&nbsp; CFO</option>
+                            <option value="CMO">&nbsp;&nbsp;&nbsp; CMO</option>
+                            <option value="COO">&nbsp;&nbsp;&nbsp; COO</option>
+                            <option value="cto">&nbsp;&nbsp;&nbsp; CTO</option>
+                            <option disabled="disabled" value="Engineer">Other Engineering</option>
+                            <option value="Hardware Engineer">&nbsp;&nbsp;&nbsp; Hardware Engineer</option>
+                            <option value="Mechanical Engineer">&nbsp;&nbsp;&nbsp; Mechanical Engineer</option>
+                            <option value="Systems Engineer">&nbsp;&nbsp;&nbsp; Systems Engineer</option>
+                            <option disabled="disabled" value="Other">Other</option>
+                            <option value="Attorney">&nbsp;&nbsp;&nbsp; Attorney</option>
+                            <option value="Business Analyst">&nbsp;&nbsp;&nbsp; Business Analyst</option>
+                            <option value="Data Scientist">&nbsp;&nbsp;&nbsp; Data Scientist</option>
+                            <option value="Product Manager">&nbsp;&nbsp;&nbsp; Product Manager</option>
+                            <option value="Project Manager">&nbsp;&nbsp;&nbsp; Project Manager</option></select>
+                          
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-6 col-ms-6">
+                        <div class="form-group">
+                          <label for="roleinput">Job Type</label>
+                          <br>
+                          <div class="custom-select" style="width:150px;">
+                            <select name="type">
+                              <option value="full-time">Full-Time</option>
+                              <option value="part-time" selected>Part-Time</option>
+                              <option value="intern">Internship</option>
+                              <option value="contractor">Contract</option>
+                              <option value="volunteer">Volunteer</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xs-6 col-sm-6 col-ms-6">
+                        <div class="form-group">
+                          <label for="roleinput">Skills</label>
+                           <div id="output"></div>
+                           
+  <select data-placeholder="Choose..."  name="skills" multiple class="chosen-select" style="width: 100%;" >
+    <option value="Java">Java</option>
+    <option value="C">C</option>
+    <option value="C++">C++</option>
+    <option value="Python">Python</option>
+    <option value="Adobe Photoshop">Adobe Photoshop</option>
+    <option value="Adobe Illustrator">Adobe Illustrator</option>
+    <option value="Adobe Lightroom">Adobe Lightroom</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="Bootstrap">Bootstrap</option>
+    <option value="Angular JS">Angular JS</option>
+    <option value="JQuery">JQuery</option>
+    <option value="MySQl">MySQl</option>
+    <option value="Javascript">Javascript</option>
+    <option value="C#">C#</option>
+    <option value="Ruby">Ruby</option>
+    <option value="Web Development">Web Development</option>
+    <option value="Advertising">Advertising</option>
+     <option value="Graphic Design">Graphic Design</option>
+    <option value="Content Writing">Content Writing</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Business Development">Business Development</option>
+    <option value="GitHub">GitHub</option>
+    <option value="PHP">PHP</option>
+    <option value="linux">Linux</option>
+    <option value="Adobe AfterEffects">Adobe AfterEffects</option>
+    <option value="Microsoft Excel">Microsoft Excel</option>
+  </select>
+  {a skill a}
+  
+
+
+<script src='http://harvesthq.github.io/chosen/chosen.jquery.js'></script>
+
+  
+
+    <script  src="/static/index3.js"></script>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="col xs-6 col-sm-6 col-ms-6">
+                        <div class="form-group">
+                          <label for="roleinput">Location</label>
+                          <input name="location" type="text" id="autocomplete" class="form-control input-sm" placeholder="Work location" oninput="this.className = ''" required>
+                        </div>
+                      </div>
+                      <div class="col xs-6 col-sm-6 col-ms-6">
+                        <div class="form-group">
+                          <label for="roleinput">Work Experience</label>
+                          <input type="number" name="experience" id="experience" class="form-control input-sm" placeholder="No. Of years" oninput="this.className = ''" required>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+                      <div class="col xs-6 col-sm-6 col-ms-6-">
+                        <div class="form-group">
+                          
+                          <label for="roleinput">Salary Range</label>
+                          <br>
+                          <div class="col xs-6 col-sm-6 col-ms-6"><b>From</b>
+                          <input type="number" name="salf" id="salary" class="form-control input-sm" oninput="this.className = ''" style="width: 100%;" required>
+                           </div>
+
+                           <div class="col xs-6 col-sm-6 col-ms-6"><b>To</b>
+                
+                           <input type="number" name="salt" id="salary" class="form-control input-sm" oninput="this.className = ''" required>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="col xs-6 col-sm-6 col-ms-6-">
+                        <div class="form-group"> 
+                          <label for="roleinput">Currency</label>
+                          <br>
+                          <br>
+                          <div class="custom-select" style="width:200px;">
+                            <select name="curr">  
+                              <option value="INR" selected="selected">&#x20B9; Indian Rupee</option>
+                              <option value="USD">&#36; United States Dollar</option>
+                              <option value="EUR">&euro; Euro</option>
+                              <option value="GBP">&pound; British Pound</option>
+                              <option value="CAD">&#36; Canadian Dollar</option>
+                              <option value="JPY">&#165; Japanese Yen</option>
+                              <option value="CNY">&#165; Chinese Renminbi Yuan</option>
+                              <option value="SGD">&#36; Singapore Dollar</option></select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="row">
+                        <div class="col xs-12 col-sm-12 col-md-12">
+                          <div class="form-group">
+                            <label for="Description">Job Description</label>
+                            <br>
+                            <textarea name="jdec" id="comments" style="width:100%; height:100px;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <a class="nexttab btn btn-primary btnNext" input type="submit" style="float: right;">Next</a>
+                    </div>
+
+
+
+                    <!---New tab-->
+                    <div class="tab-pane" id="tab2" ng-init="ini()">
+                      <div class="row" >
+
+                        <div class="col xs-12 col-sm-12 col-md-12">
+                       
+                          <div class="form-group" id="Questions"><p><b>Add Desired Questions</b></p>
+                           <p ng-repeat="i in quest track by $index"><b style="border: 1px solid #dddddd; border-radius: 5px; padding: 7px;color:474646;font-weight: 100;background: " ng-if="quest[$index]!=''"><i class="fa fa-genderless"  style="color:#474646; padding: 6px;"></i>{a i a}</b> <button type="button"  ng-if="quest[$index]!=''" ng-click="quest[$index]=''" style="border: 1px solid #ffdddd; border-radius: 5px; background:#ffdddd; align-self:'right';" >&times;</button></p>
+
+                           <button type="button" class="btn btn-default btn-lg" ng-click="ind=ind+1" id="myBtn" style="background-color:#f5f5f5;">Add</button>
+
+                           <!-- Modal -->
+                           <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header" style="padding:35px 50px;">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h3><span class="glyphicon glyphicon-plus"></span><b> Add New Question</b></h3>
+                                </div>
+                                <div class="modal-body" style="padding:40px 50px;">
+                                  <div class="form-group">
+                                    <label for="usrname"><span class="glyphicon glyphicon-pencil"></span> Select Type of Question</label>
+                                    <div class="custom-select" style="width:200px;">
+                                      <select ng-model="qty[ind]" value="Single-Line">
+                                        <option value="Single-Line">Single-Line Question</option>
+                                        <option value="Multiple-Line">Multiple-Line Question</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="psw"><span class="glyphicon glyphicon-question-sign"></span> Question</label>
+                                    <input type="text" class="form-control" ng-model="quest[ind]" value="Enter question" id="usrname" placeholder="Enter question" oninput="this.className = ''">
+                                  </div>
+                                  <input name="cques" value="{a quest a}" style="width: 0px;height: 0px;border: 0px;"/>
+                                  <input name="cqty" value="{a qty a}" style="width: 0px;height: 0px;border: 0px;"/> 
+                                  <button class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Add</button>
+                                </div>
+                                <div class="modal-footer">
+                                  <button ng-click="quest[ind]=''"" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> 
+
+
+                          <script>
+                            $(document).ready(function(){
+                              $("#myBtn").click(function(){
+                                $("#myModal").modal();
+                              });
+                            });
+                          </script>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row">
+
+                      <div class="col xs-4 col-sm-6 col-ms-6-6">
+                        <div class="form-group">
+                          <p><b>Switch On or Off elements</b></p>
+                          <div class="columns">
+                           <p><i class="fa fa-phone" aria-hidden="true" style="color:#474646; padding: 6px;"></i>Ask Applicant for phone number.</p>
+                           <br>
+                           <p><i class="fa fa-file" aria-hidden="true" style="color:#474646; padding: 6px;"></i>Ask Applicant for resume.</p>
+
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col xs-8 col-sm-6 col-ms-6">
+                      <div class="form-group">
+                       <div class="columns">
+                         <br>
+                         <p>
+                           <label class="switch"> 
+                            <input name="ph" type="checkbox" checked>
+                            <span class="slider round"></span>
+                          </label></p>
+
+                          <p><label class="switch"> 
+                            <input name="res"type="checkbox" checked>
+                            <span class="slider round"></span>
+                          </label></p>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary btnNext"  id="nextBtn" style="float: right; margin:2.5px;" >Next</a>
+                  <a class="btn btn-primary btnPrevious" id="prevBtn" style="float: right; margin:2.5px;" >Previous</a>
+                </div>
+
+
+
+
+
+
+<script>
+  var app = angular.module("app", []);
+  angular.module('app').config(['$interpolateProvider', function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{a');
+    $interpolateProvider.endSymbol('a}');
+  }]);
+  app.controller("httpcontroller", ['$scope', '$http', '$window',function ($scope, $http) {
+    $scope.ini = function () {
+      $scope.ind=-1
+      $scope.qty='null'
+      $scope.quest=[]
+      $scope.em1=''
+      $scope.em2=''
+      $scope.em3=''
+      $scope.em4=''
+      $scope.em5=''
+      $scope.mail=''
+    };
+
+
+    }]);
+
+
+  </script>
+
+
+
+
+
+
+
+
+                <!--new tab-->
+
+
+
+                <div class="tab-pane" id="tab3">
+                  <h5 align="center" style="background-color: #f5f5f5;"><b>Manage your workflow! Click on <button class="btn btn-info" type="button" id="info" style="color: #333333; background-color: #f5f5f5; border-color: #f5f5f5; border-radius: 50%; padding: 0px 0px 0px 0px;"><span class="glyphicon glyphicon-info-sign"></span></button> to know more.</b></h5>
+                  <div class="modal fade" id="modal1" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header" style="padding:30px 50px;">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h1><b>YOU CAN..</b></h1>
+                        </div>
+                        <div class="modal-body" style="padding:40px 50px;">
+
+                          <h5><b>Drag and Drop stages to modify the workflow sequence.  </b><i class="fas fa-arrows-alt-v"></i></h5>
+                          <h5><b> Customise stage description by double clicking on stages.    </b><i class="fas fa-pencil-alt"></i></h5>
+                          <h5><b> Add new stages by clicking on 'Add' button.   </b><i class="fas fa-plus"></i></h5>
+                          <h5><b> Name your new stage by pressing enter after typing new name.</b><i class="fas fa-tag"></i></h5>
+                          <h5><b> Delete stages by clicking on </b><i class="fas fa-times"></i></h5>
+                          <h6><b> (Default stages cannot be deleted. The minimum number of stages is 5 and the maximum is 8.)</b><h6>
+
+
+
+                          </div>
+                          <div class="modal-footer" style="padding:35px 50px;">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div> 
+
+
+                    <script>
+                      $(document).ready(function(){
+                        $("#info").click(function(){
+                          $("#modal1").modal();
+                        });
+                      });
+                    </script>
+                    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                    <script>
+                      $( function() {
+                        $( "#sortable" ).sortable();
+                        $( "#sortable" ).disableSelection();
+                      } );
+                    </script>
+                   
+                    <ul id="sortable">
+                      <i class="fa fa-navicon" style="color: #474646;padding-right: 7px;"></i><i class="fas fa-arrows-alt-v" style="color: #474646;"></i>
+
+                      <li class="ui-state-default"><i class="fas fa-check-square" aria-hidden="true" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></i>Applied<i class="fas fa-edit" onclick="applied()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+                      <li class="ui-state-default"><i class="fas fa-paper-plane" aria-hidden="true" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;""></i>Invited<i class="fas fa-edit" onclick="invited()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+                      <li class="ui-state-default" id="li2"><i class="fas fa-clipboard" aria-hidden="true" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></i>Completed<i class="fas fa-edit" onclick="completed()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+                      <li class="ui-state-default" id="li3"><i class="fas fa-smile" aria-hidden="true" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></i>Shortlisted<i class="fas fa-edit" onclick="shortlisted()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+                      <li  class="ui-state-default" id="li4"><i class="fas fa-frown" aria-hidden="true" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></i>Rejected<i class="fas fa-edit" onclick="rejected()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+
+                      <!---new1-->
+                      <li class="ui-state-default" id="abc"><label id="newa" style="margin-top: 12px;margin-left: 50px;"></label><i class="fas fa-edit" onclick="abc()" style="float:right; color:#bcb8b8; font-size:12px;"></i></li>
+
+                      <li button class="ui-state-default" id="add" onclick="abc()"><span class="glyphicon glyphicon-plus" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;""></span>Add New</li>
+
+                      <!--new2-->
+                      <li button class="ui-state-default" id="abc1"><label id="newb" style="margin-top: 12px;margin-left: 50px;"></label><i class="fas fa-edit" onclick="abc1()" style="float:right; color: #bcb8b8; font-size:12px;"></i></li>
+
+
+                      <li button class="ui-state-default" id="add1" onclick="abc1()"><span class="glyphicon glyphicon-plus" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></span>Add New</li> 
+
+                      <!--new3-->.
+                      <li class="ui-state-default" id="abc2"><label id="newc" style="margin-top: 12px;margin-left: 50px;"></label><i class="fas fa-edit" onclick="abc2()" style="float: right; color:#bcb8b8; font-size:12px;"></i></li>
+
+
+                      <li button class="ui-state-default" id="add2" onclick="abc2()"><span class="glyphicon glyphicon-plus" style="position: relative; margin-right: 30px;margin-top:12px;margin-left:10px;font-size:17px;"></span>Add New</li>
+
+                    </ul>
+                    
+  
+   
+ 
+
+ <script src="index4.js"></script>
+       <link rel="stylesheet" href="/static/style4.css">
+
+                    <script>
+                      $(document).ready(function(){
+                        $("#abc").hide();
+                        $("#abc1").hide();
+                        $("#abc2").hide();
+                        $("#add1").hide();
+                        $("#add2").hide();
+
+                        $("#save1").click(function(){
+                          $("#abc").toggle(500);
+                          $("#add1").show();
+                          $("#add").hide();
+
+
+                        });
+
+                        $("#save2").click(function(){
+                          $("#abc1").toggle(500);
+                          $("#add2").show();
+                          $("#add1").hide();
+
+
+                        });
+
+                        $("#save3").click(function(){
+                          $("#abc2").toggle(500);
+                          $("#add2").hide();
+                          $("#add1").hide();
+
+
+                        });
+
+
+                      });
+                    </script>
+
+
+                    <div class="modal fade" id="apply" role="dialog">
+                      <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7"">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2><b>Applied  </b><i class="far fa-check-square" aria-hidden="true"></i></h2>
+                          </div>
+                          <div class="modal-body" style="padding:40px 50px;">
+                            <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st1n" value="Applied" readonly style="color:black; ">
+                            <h4><b>Stage Type</b></h4>
+                            <div class="custom-select" style="width:200px;">
+                              <select name="st1t">
+                                <option value="Single-Line">Stage 1</option>
+                                <option value="Multiple-Line">stage 2</option>
+                                <option value="yes/no">Stage 3</option>
+                                <option value="yes/no">Stage 4</option>
+                                <option value="yes/no">Stage 5</option>
+                                <option value="yes/no">Stage 6</option>
+                                <option value="yes/no">Stage 7</option>
+                                <option value="yes/no">Stage 8</option>
+                              </select></div>
+                              <h4><b>Enter description for this stage.</b></h4>
+                              <p><b>Descrption:</b></p>
+
+                              <textarea></textarea>
+
+
+
+
+                            </div>
+                            <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;">
+                              <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div> 
+
+                      <script>
+                        function applied()
+                        {
+                          $("#apply").modal();
+                        };
+                      </script>
+
+                      <div class="modal fade" id="invite" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h2><b>Invited  </b><i class="far fa-paper-plane" aria-hidden="true"></i></h2>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+
+                              <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st2n" value="Invited" readonly style="color:black; ">
+
+                              <h4><b>Stage Type</b></h4>
+                              <div class="custom-select" style="width:200px;">
+                                <select name="st2t">
+                                  <option value="Single-Line">Stage 1</option>
+                                  <option value="Multiple-Line">stage 2</option>
+                                  <option value="yes/no">Stage 3</option>
+                                  <option value="yes/no">Stage 4</option>
+                                  <option value="yes/no">Stage 5</option>
+                                  <option value="yes/no">Stage 6</option>
+                                  <option value="yes/no">Stage 7</option>
+                                  <option value="yes/no">Stage 8</option>
+                                </select></div>
+                                <h4><b>Enter description for this stage.</b></h4>
+                                <p><b>Descrption:</b></p>
+
+                                <textarea></textarea>
+
+
+
+
+                              </div>
+                              <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6; ">
+                                <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div> 
+
+                        <script>
+                          function invited()
+                          {
+                            $("#invite").modal();
+                          };
+                        </script>
+                        <div class="modal fade" id="comp" role="dialog">
+                          <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2><b>Completed  </b><i class="far fa-clipboard" aria-hidden="true"></i></h2>
+                              </div>
+                              <div class="modal-body" style="padding:40px 50px;">
+
+                                <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st3n" value="Completed" style="color:black; ">
+
+                                <h4><b>Choose stage number.</b></h4>
+                                <div class="custom-select" style="width:200px;">
+                                  <select name="st3t">
+                                    <option value="Single-Line">Stage 1</option>
+                                    <option value="Multiple-Line">stage 2</option>
+                                    <option value="yes/no">Stage 3</option>
+                                    <option value="yes/no">Stage 4</option>
+                                    <option value="yes/no">Stage 5</option>
+                                    <option value="yes/no">Stage 6</option>
+                                    <option value="yes/no">Stage 7</option>
+                                    <option value="yes/no">Stage 8</option>
+                                  </select></div>
+                                  <h4><b>Enter description for this stage.</b></h4>
+                                  <p><b>Descrption:</b></p>
+
+                                  <textarea></textarea>
+
+
+
+
+                                </div>
+                                <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;">
+                                  <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> 
+
+                          <script>
+                            function completed()
+                            {
+                              $("#comp").modal();
+                            };
+                          </script>
+                          <div class="modal fade" id="short" role="dialog">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h2><b>Shortlisted  </b><i class="far fa-smile" aria-hidden="true"></i></h2>
+                                </div>
+                                <div class="modal-body" style="padding:40px 50px;">
+                                  <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st4n" value="Shortlisted" style="color:black; ">
+                                  <h4><b>Choose stage number.</b></h4>
+                                  <div class="custom-select" style="width:200px;">
+                                    <select name="st4t">
+                                      <option value="Single-Line">Stage 1</option>
+                                      <option value="Multiple-Line">stage 2</option>
+                                      <option value="yes/no">Stage 3</option>
+                                      <option value="yes/no">Stage 4</option>
+                                      <option value="yes/no">Stage 5</option>
+                                      <option value="yes/no">Stage 6</option>
+                                      <option value="yes/no">Stage 7</option>
+                                      <option value="yes/no">Stage 8</option>
+                                    </select></div>
+                                    <h4><b>Enter description for this stage.</b></h4>
+                                    <p><b>Descrption:</b></p>
+
+                                    <textarea></textarea>
+
+
+
+
+
+
+
+                                  </div>
+                                  <div class="modal-footer" style="padding:35px 50px;border-color:#d8d6d6;">
+                                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div> 
+
+                            <script>
+                              function shortlisted()
+                              {
+                                $("#short").modal();
+                              };
+                            </script>
+                            <div class="modal fade" id="rej" role="dialog">
+                              <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2><b>Rejected  </b><i class="far fa-frown" aria-hidden="true"></i></h2>
+                                  </div>
+                                  <div class="modal-body" style="padding:40px 50px;">
+
+                                    <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st5n" value="Rejected" style="color:black; ">
+
+                                    <h4><b>Choose stage number.</b></h4>
+                                    <div class="custom-select" style="width:200px;">
+                                      <select name="st5t">
+                                        <option value="Single-Line">Stage 1</option>
+                                        <option value="Multiple-Line">stage 2</option>
+                                        <option value="yes/no">Stage 3</option>
+                                        <option value="yes/no">Stage 4</option>
+                                        <option value="yes/no">Stage 5</option>
+                                        <option value="yes/no">Stage 6</option>
+                                        <option value="yes/no">Stage 7</option>
+                                        <option value="yes/no">Stage 8</option>
+                                      </select></div>
+                                      <h4><b>Enter description for this stage.</b></h4>
+                                      <p><b>Descrption:</b></p>
+
+                                      <textarea></textarea>
+
+
+
+
+                                    </div>
+                                    <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;"><button type="submit"  class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div> 
+
+                              <script>
+                                function rejected()
+                                {
+                                  $("#rej").modal();
+                                };
+                              </script>
+                              <!--new1-->
+
+                              <div class="modal fade" id="new1" role="dialog">
+                                <div class="modal-dialog">
+
+                                  <!-- Modal content-->
+                                  <div class="modal-content">
+                                    <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h2 id="newa1" style="background:#337ab7;border:#337ab7; font-weight: 700px;"><b>New Stage</b></h2>
+
+
+                                    </div>
+                                    <div class="modal-body" style="padding:40px 50px;">
+
+
+                                      <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st6n" id="newname1" onfocus="this.value=''" value="Rename Stage" style="color: black;">
+                                      <script>       
+                                        $( document ).ready(function() {
+                                          $('#newname1').change(function(){
+                                            $('#newa').html($('#newname1').val());
+                                          });
+                                          $('#newname1').change(function(){
+                                            $('#newa1').html($('#newname1').val());
+                                          });
+                                        });</script>
+                                        <h4><b>Choose stage number.</b></h4>
+                                        <div class="custom-select" style="width:200px;">
+                                          <select name="st6t">
+                                            <option value="Single-Line">Stage 1</option>
+                                            <option value="Multiple-Line">stage 2</option>
+                                            <option value="yes/no">Stage 3</option>
+                                            <option value="yes/no">Stage 4</option>
+                                            <option value="yes/no">Stage 5</option>
+                                            <option value="yes/no">Stage 6</option>
+                                            <option value="yes/no">Stage 7</option>
+                                            <option value="yes/no">Stage 8</option>
+                                          </select></div>
+                                          <h4><b>Enter description for this stage.</b></h4>
+                                          <p><b>Descrption:</b></p>
+                                          
+                                          <textarea></textarea>
+
+
+
+                                        </div>
+                                        <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;">
+                                          <button type="submit" id="save1" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div> 
+
+                                  <script>
+                                    function abc()
+                                    {
+                                      $("#new1").modal();
+                                    };
+                                  </script>
+
+
+
+
+
+                                  <div class="modal fade" id="new2" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h2 id="newb2" style="background:#337ab7;border:#337ab7; font-weight: 700px;"><b>New Stage</b></h2>
+
+                                        </div>
+                                        <div class="modal-body" style="padding:40px 50px;">
+                                         <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input type="text" name="st7n"id="newname2" onfocus="this.value=''" value="Rename Stage" style="color: black;">
+                                         <script>       
+                                          $( document ).ready(function() {
+                                            $('#newname2').change(function(){
+                                              $('#newb').html($('#newname2').val());
+                                            });
+                                            $('#newname2').change(function(){
+                                              $('#newb2').html($('#newname2').val());
+                                            });
+                                          });</script>
+
+
+                                          <h4><b>Choose stage number.</b></h4>
+                                          <div class="custom-select" style="width:200px;">
+                                            <select name="st7t">
+                                              <option value="Single-Line">Stage 1</option>
+                                              <option value="Multiple-Line">stage 2</option>
+                                              <option value="yes/no">Stage 3</option>
+                                              <option value="yes/no">Stage 4</option>
+                                              <option value="yes/no">Stage 5</option>
+                                              <option value="yes/no">Stage 6</option>
+                                              <option value="yes/no">Stage 7</option>
+                                              <option value="yes/no">Stage 8</option>
+                                            </select></div>
+                                            <h4><b>Enter description for this stage.</b></h4>
+                                            <p><b>Descrption:</b></p>
+
+                                            <textarea></textarea>
+
+
+
+
+                                          </div>
+                                          <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;">
+                                            <button type="submit" id="save2" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                    </div> 
+
+                                    <script>
+                                      function abc1()
+                                      {
+                                        $("#new2").modal();
+                                      };
+                                    </script>
+
+
+
+
+                                    <div class="modal fade" id="new3" role="dialog">
+                                      <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                          <div class="modal-header" style="padding:10px 10px; background-color: #337ab7;border-color: #337ab7;">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h2 id="newc3" style="background:#337ab7;border:#337ab7; font-weight: 700px;"><b>New Stage</b></h2>
+
+                                          </div>
+                                          <div class="modal-body" style="padding:40px 50px;">
+
+
+
+                                            <h4><b>Stage Name  </b><i class="fas fa-lock"></i></h4><input name="st8n" type="text" id="newname3" onfocus="this.value=''" value="Rename Stage" style="color: black;">
+                                            <script>       
+                                              $( document ).ready(function() {
+                                                $('#newname3').change(function(){
+                                                  $('#newc').html($('#newname3').val());
+                                                });
+                                                $('#newname3').change(function(){
+                                                  $('#newc3').html($('#newname3').val());
+                                                });
+                                              });</script>
+
+                                              <h4><b>Choose stage number.</b></h4>
+                                              <div class="custom-select" style="width:200px;">
+                                                <select name="st8t">
+                                                  <option value="Single-Line">Stage 1</option>
+                                                  <option value="Multiple-Line">stage 2</option>
+                                                  <option value="yes/no">Stage 3</option>
+                                                  <option value="yes/no">Stage 4</option>
+                                                  <option value="yes/no">Stage 5</option>
+                                                  <option value="yes/no">Stage 6</option>
+                                                  <option value="yes/no">Stage 7</option>
+                                                  <option value="yes/no">Stage 8</option>
+                                                </select></div>
+                                                <h4><b>Enter description for this stage.</b></h4>
+                                                <p><b>Descrption:</b></p>
+
+                                                <textarea></textarea>
+
+
+                                              </div>
+                                              <div class="modal-footer" style="padding:35px 50px; background-color: #d8d6d6;border-color:#d8d6d6;">
+                                                <button type="submit" id="save3" class="btn btn-primary pull-right" data-dismiss="modal" style="float: right; margin:2.5px;" >Save</button>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div> 
+
+                                        <script>
+                                          function abc2()
+                                          {
+                                            $("#new3").modal();
+                                          };
+                                        </script>
+
+                                        <a class="btn btn-primary btnNext" id="nextBtn" style="float: right; margin:2.5px;" >Next</a>
+                                        <a class="btn btn-primary btnPrevious" id="prevBtn" style="float: right; margin:2.5px;" >Previous</a>
+                                      </div>
+
+
+
+                                      <!--new tab-->
+                                      <div class="tab-pane" id="tab4">
+                                       <section class="design-process-section" id="process-tab">
+                                        <div class="container">
+                                          <div class="row">
+                                            <div class="col-xs-12"> 
+                                              <h5 align="center"><b>Manage E-mail alerts by navigating through the workflow.</b></h5>
+                                              <!-- design process steps--> 
+                                              <!-- Nav tabs -->
+                                              <ul class="nav nav-tabs process-model more-icon-process" role="tablist">
+                                                <li role="presentation" id="new" class="active" ><a href="#applied" aria-controls="applied" role="tab" data-toggle="tab"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                  <p>Applied</p>
+                                                </a></li>
+                                                <li role="presentation" id="new" ><a href="#invited" aria-controls="invited" role="tab" data-toggle="tab"><i class="far fa-paper-plane" aria-hidden="true"></i>
+                                                  <p>Invited</p>
+                                                </a></li>
+                                                <li role="presentation" id="new"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab"><i class="far fa-check-square" aria-hidden="true"></i>
+                                                  <p>Completed</p>
+                                                </a></li>
+                                                <li role="presentation" id="new"><a href="#shortlisted" aria-controls="shortlisted" role="tab" data-toggle="tab"><i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                  <p>Shortlisted</p>
+                                                </a></li>
+                                                <li role="presentation" id="new"><a href="#rejected" aria-controls="rejected" role="tab" data-toggle="tab"><i class="fa fa-frown-o" aria-hidden="true"></i>
+                                                  <p>Rejected</p>
+                                                </a></li>
+
+                                              </ul>
+                                              <!-- end design process steps--> 
+                                              <!-- Tab panes -->
+                                              <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="applied">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>Applied</b></h3>
+                                                    <p>Send E-mail alerts to applicants who have successfully applied.</p>
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round "></span>
+                                                    </label></p>
+                                                    <br>
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input type="text" name="st1sub" id="title" placeholder="e.g Application submitted successfully for [job-title]" oninput="this.className = ''">
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st1mail"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="invited">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>Assessments</b></h3>
+                                                    <p>Send E-mail Invites to desired applicants.</p>
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round"></span>
+                                                    </label></p>
+                                                    <br>
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input name="st2sub" type="text"  id="title" placeholder="e.g Applicant successfully invited for [job-title]" oninput="this.className = ''" >
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st2mail"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="completed">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>Completed Assessment</b></h3>
+                                                    <p>Send E-mail alerts to applicants who have successfully completed the assessment.</p>
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round"></span>
+                                                    </label></p>
+                                                    <br>
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input name="st3sub" type="text" id="title" placeholder="e.g Assessment successfully completed for [job-title]" oninput="this.className = ''" >
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st3mail"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="shortlisted">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>Shortlisted</b></h3>
+                                                    <p>Send E-mail alerts to applicants who have been shortlisted.</p> 
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round"></span>
+                                                    </label></p>
+                                                    <br>
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input name="st4sub" type="text"  id="title" placeholder="e.g Applicant shortlisted for [job-title]" oninput="this.className = ''" >
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st4mail"></textarea>             
+                                                  </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="rejected">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>Rejected</b></h3>
+                                                    <p>Send E-mail alerts to applicants who have been rejected. </p>
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round"></span>
+                                                    </label></p>
+
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input name="st5sub"type="text"  id="title" placeholder="e.g Applicant rejected for [job-title]" oninput="this.className = ''">
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st5mail"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="new">
+                                                  <div class="design-process-content">
+                                                    <h3 class="semi-bold"><b>New Field</b></h3>
+                                                    <p>Send E-mail alerts to applicants.</p>
+                                                    <p><label class="switch"> 
+                                                      <input type="checkbox" checked>
+                                                      <span class="slider round"></span>
+                                                    </label></p>
+                                                    <br>
+                                                    <p><b>E-mail Subject:</b></p>
+                                                    <input type="text" name="st6sub" id="title" placeholder="e.g Assessment successfully completed for [job-title]" oninput="this.className = ''" >
+                                                    <br>
+                                                    <p><b>E-mail Content:</b></p>
+
+                                                    <textarea name="st6mail"></textarea>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+
+                                      <button class="btn btn-primary b" type="submit" style="float: right; margin:2.5px;" >Submit</button>
+                                      <a class="btn btn-primary btnPrevious" id="prevBtn" style="float: right; margin:2.5px;" >Previous</a>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                       $('.btnNext').click(function(){
+                        window.scrollTo(00,00);
+                        if(validateForm())
+                        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+                      });
+
+                       $('.btnPrevious').click(function(){
+                        window.scrollTo(00,00);
+                        $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+                      });
+
+
+    function validate(ele){
+                        var d=document.getElementById(ele)
+                        var x = document.getElementsByClassName("tab-pane active");
+                        if(validateForm())
+                          d.setAttribute("data-toggle","tab");
+                          
+                       }
+    function validateForm() {
+    // This function deals with validation of the form fields
+    var x, y, z, i, valid = true;
+    x = document.getElementsByClassName("tab-pane active");
+    z = document.getElementById('tab2')
+    if(x[0] != z){
+    y = x[0].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      if(y[i].required){
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+      y[i].className += " invalid";
+        // and set the current valid status to false
+         valid=false;
+       }
+    }
+  }
+    }
+    return valid
+  }
+    </script>
+                    <script>
+        // This example displays an address form, using the autocomplete feature
+        // of the Google Places API to help users fill in the information.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+
+        function initAutocomplete() {
+          // Create the autocomplete object, restricting the search to geographical
+          // location types.
+          autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+          // When the user selects an address from the dropdown, populate the address
+          // fields in the form.
+          autocomplete.addListener('place_changed', fillInAddress);
+        }
+
+
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var geolocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              var circle = new google.maps.Circle({
+                center: geolocation,
+                radius: position.coords.accuracy
+              });
+              autocomplete.setBounds(circle.getBounds());
+            });
+          }
+        }
+      </script>
+      <script>
+        var x, i, j, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        for (i = 0; i < x.length; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          /*for each element, create a new DIV that will act as the selected item:*/
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /*for each element, create a new DIV that will contain the option list:*/
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 0; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+      });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPvtJnUultwv9hJ5_VDJVkaCsl18WAYYg&libraries=places&callback=initAutocomplete"
+async defer></script>
+
+</body>
+</html>

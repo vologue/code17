@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<title>Job Description Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<style>
+body,h2,h3 {font-family: "Karla", sans-serif;
+                      color: #1c71b8;
+                      
+
+                  }
+                      h1,h4,h5{
+                      	font-family: "Karla", sans-serif;
+                      }
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content w3-white" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-25" style="background: #f1f1ff;"> 
+
+<br>
+  <h2><img src="/static/xobincolorlogo.png"></h2>
+  <br>
+  
+</header>
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- END BLOG ENTRIES -->
+</div>
+<!-- Introduction menu -->
+<div class="w3-col l3 " style="background: #f1f1ff;">
+  <!-- About Card -->
+  <div class="w3-card w3-margin-top" style="margin: 30px;">
+
+  <div class="w3-container w3-center" style="background: #f9f9fa; padding-top:30px;" >
+      <h3><b>OUR WEAPONS</b></h3>
+      <h5><span class="w3-opacity">Skills we work with</span></h5>
+      
+    </div>
+
+  <div class="w3-container " style="background: #f9f9fa; padding-left:60px;padding-right:60px;padding-bottom: 30px;padding-top: 10px ">
+
+  
+     
+    
+    
+    <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>{{job['Skills Req'][0]}}</p>
+      <div class="w3-light-grey">
+        <div class="w3-container  w3-center" style="width:90%; background: #6772e5;">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>{{job['Skills Req'][1]}}</p>
+      <div class="w3-light-grey">
+        <div class="w3-container  w3-center" style="width:85%; background: #1b75bb;">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fas fa-image w3-margin-right"></i>{{job['Skills Req'][2]}}</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-center" style="width:75%;background: #8cb9dd;">75%</div>
+      
+    </div>
+    <br>
+  </div>
+ 
+
+   
+  </div>
+  
+  <div class="w3-card w3-margin-top" style="margin:30px;">
+
+  <div class="w3-container w3-center" style="background: #f9f9fa; padding-top:30px;" >
+      <h3><b>FURTHER DETAILS</b></h3>
+      <h5><span class="w3-opacity">Skills we work with</span></h5>
+      
+    </div>
+
+  <div class="w3-container " style="background: #f9f9fa; padding-left:60px;padding-right:60px;padding-bottom: 30px;padding-top: 20px ">
+
+  
+     
+    
+    
+    <p class="w3-wide"><i class="fas fa-rupee-sign w3-margin-right"></i></i>{{job['Salary range']}}</p>
+      <br>
+      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right" ></i></i>Something Else</p>
+     
+    
+    <div class="w3-row">
+        <div class="w3-col m8 s12" style="background: #f9f9fa;">
+          <p><button class="w3-button w3-padding-large w3-white w3-border w3-left" style="color: #474646;"><b>KNOW MORE »</b></button></p>
+        </div>
+       
+      </div>
+  </div>
+ 
+
+   
+  </div>
+ 
+ </div>
+
+<!-- Blog entries -->
+<div class="w3-col l9 s12 " style="background: #f1f1ff;">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin" style="background: #f9f9fa;width: 95%;">
+    
+    <div class="w3-container w3-center" style="padding-top: 40px;">
+      <h3><b>{{job['Job Tiltle']}}</b></h3>
+      <h5><span class="w3-opacity">Job id: {{job['jid']}}<br>
+        Job Decription</span></h5>
+    </div>
+
+    <div class="w3-container w3-center" style="padding-left:80px;padding-right: 80px;padding-top: 20px;padding-bottom: 40px;">
+      <p>{{job['Job Decription']}}</p>
+    
+    </div>
+   <br>
+   <br>
+   <br>
+  <!-- Blog entry -->
+   <div class="w3-container w3-center" style="padding-top: 30px;">
+      <h3><b>ABOUT THE COMPANY</b></h3>
+      <h5><span class="w3-opacity">Know us better</span></h5>
+      
+    </div>
+  
+  <div class="w3-row-padding w3-center" style="margin-top:44px; padding-left:80px;padding-right: 80px;padding-top: 20px;padding-bottom: 20px; ">
+    
+    <div class="w3-quarter">
+      <i class="fas fa-gem w3-margin-bottom w3-xxlarge" style="color: #333;"></i>
+      <p class="w3-large">Vision</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-xxlarge w3-center" style="color: #333;"></i>
+      <p class="w3-large">Technologies we use</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fas fa-users w3-margin-bottom w3-xxlarge" style="color: #333;"></i>
+      <p class="w3-large">Work Environment</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+     <div class="w3-quarter">
+      <i class="far fa-handshake w3-margin-bottom w3-xxlarge" style="color: #333;"></i>
+      <p class="w3-large">Partners</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+
+
+    
+  </div>
+
+<br>
+<br>
+  </div>
+</div>
+
+
+<!-- Contact Section -->
+<div class="w3-container" style="padding:108px 16px; background:#f1f1ff;" id="contact">
+    <div class="w3-container  w3-center" style="background: #f1f1ff;">
+      <h3><b>CONTACT</b></h3>
+      <h5><span class="w3-opacity">Let's get in touch.</span></h5>
+      
+    </div>
+  <div class="w3-row-padding" style="margin-top:20px">
+    <div class="w3-col l6 s12">
+    <div class="w3-center">
+    <p><i class="fa fa-map-marker-alt fa-fw " style="color: #333333;"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw  " style="color: #333333;"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw  " style="color: #333333;"> </i> Email: mail@mail.com</p>
+      </div>
+      <br>
+      <div class="w3-xlarge w3-section w3-center">
+    <i class="fab fa-facebook-official w3-hover-opacity" style=" color: #1c71b8;"></i>
+    <i class="fab fa-instagram w3-hover-opacity" style=" color: #1c71b8;"></i>
+    <i class="fab fa-snapchat w3-hover-opacity" style=" color: #1c71b8;"></i>
+    <i class="fab fa-pinterest-p w3-hover-opacity" style=" color: #1c71b8;"></i>
+    <i class="fab fa-twitter w3-hover-opacity" style=" color: #1c71b8;"></i>
+    <i class="fab fa-linkedin w3-hover-opacity" style=" color: #1c71b8;"></i>
+  </div>
+    </div>
+    <div class="w3-col l5 s12">
+      <!-- Add Google Maps -->
+      <div id="googleMap" style="width:100%;height:280px;"></div>
+    </div>
+  </div>
+</div>
+  
+<!-- END Introduction Menu -->
+
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center " style=";background: #f1f1ff;color: #000000;">
+ 
+  <h6>&copy; Xobin Inc</h6>
+</footer>
+
+
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(12.9902, 80.2419);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPvtJnUultwv9hJ5_VDJVkaCsl18WAYYg&callback=myMap"></script>
+</body>
+</html>

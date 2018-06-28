@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Application Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+
+      <link rel="stylesheet" href="/static/app/style.css">
+      <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script data-require="angular-route@1.2.5" data-semver="1.2.5" src="http://code.angularjs.org/1.2.5/angular-route.js"></script>
+
+    <script type="text/javascript" src="/static/tinymce.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="httpcontroller" ng-init="ini()">
+ 
+
+	<form class="registration-form" action="/{{cid}}-{{jbs['jid']}}/applicant", method="POST" enctype = "multipart/form-data">
+  <header ng-model="q.ques={{q}}">
+    <h1>
+      <a href="#">
+        <img src="/static/app/ilogo.svg" alt="Authentic Collection">
+      
+      </a>
+        </h1></header>
+		<label>
+			<span class="label-text">Full Name</span>
+			<input type="text" name="name">
+		</label>
+		<label>
+			<span class="label-text">Email</span>
+			<input type="text" name="email">
+		</label>
+		<label class="col-one-half">
+			<span class="label-text">Date of Birth</span>
+			<input type="date" name="dob">
+		</label>
+		<label class="col-one-half">
+			<span class="label-text">Location</span>
+			<input type="text" name="location" id="autocomplete" placeholder="Current Location">
+		</label>
+		
+		<label class="col-one-half">
+			<span class="label-text">Phone Number (Optional)</span>
+			<input type="text" name="number">
+
+		</label>
+		<label class="col-one-half">
+			<span class="label-text">Available Start Date</span>
+			<input type="date" name="startd">
+
+		</label>
+		
+		<label>
+			<span class="label-text">Current Employment Status</span>
+			<select name="empstat">
+  <option value="employed">Employed</option>
+  <option value="unemployed">Unemployed</option>
+  <option value="self-employed">Self-Employed</option>
+  <option value="student">Student</option>
+</select>
+<p></p>
+		</label>
+    {% for i in range(0,n) %}
+		<label>
+			<span class="label-text">{{ i+1 }}. {{ q[i] }}</span>
+			<input type="text" name="explain" readonly>
+			<br><textarea data-ui-tinymce ng-model="answers[{{i}}]"></textarea>
+			<br>
+		</label>
+    {% endfor %}
+    <input value='{a answers a}' name="ans" ng-hide="true" style="width:0px;height:0px;" />
+	<br>
+	<label>
+			<span class="label-text">Please attach your Resume.</span>
+			<br>
+		 
+    <input type="file" name="file" class="file">
+    <div class="input-group col-xs-12">
+      <span class="input-group-addon" style="background: #012e93; color: #ffffff;border: 1px solid #012e93;"><i class="fas fa-file-alt"></i></span>
+      <input type="text" name="file" class="form-control input-lg" disabled placeholder="Upload Resume" style="border:1px solid #474646; ">
+      <span class="input-group-btn">
+        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+      </span>
+    </div>
+  
+			<br>
+		</label>
+		<br>
+		
+
+		
+		<div class="text-center">
+			<button class="submit" type="submit">Send My Application <i class="fab fa-telegram-plane"></i></button>
+		</div>
+	</form>
+  </body>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="/static/app/index.js"></script>
+    <script>
+        // This example displays an address form, using the autocomplete feature
+        // of the Google Places API to help users fill in the information.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+
+        function initAutocomplete() {
+          // Create the autocomplete object, restricting the search to geographical
+          // location types.
+          autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+          // When the user selects an address from the dropdown, populate the address
+          // fields in the form.
+          autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var geolocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              var circle = new google.maps.Circle({
+                center: geolocation,
+                radius: position.coords.accuracy
+              });
+              autocomplete.setBounds(circle.getBounds());
+            });
+          }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPvtJnUultwv9hJ5_VDJVkaCsl18WAYYg&libraries=places&callback=initAutocomplete"
+    async defer></script>
+
+    <script>
+    	$(document).on('click', '.browse', function(){
+  var file = $(this).parent().parent().parent().find('.file');
+  file.trigger('click');
+});
+$(document).on('change', '.file', function(){
+  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+});
+    </script>
+    <script>
+  var app = angular.module("app", ['ui.tinymce','ui.bootstrap']);
+  angular.module('app').config(['$interpolateProvider', function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{a');
+    $interpolateProvider.endSymbol('a}');
+  }]);
+  app.controller("httpcontroller", ['$scope', '$http', '$window',function ($scope, $http) {
+    $scope.ini = function () {
+      $scope.answers=[]
+      $scope.ind=0
+    };
+  }]);
+</script>
+</body>
+</html>
